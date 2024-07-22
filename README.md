@@ -1,18 +1,49 @@
 <<<<<<< HEAD
-# drex-did-vc
+# Projeto DREX DID VC
+
 TCC sobre identidades descentralizadas e credenciais verificáveis para o DREX
 =======
-# Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+Este projeto implementa uma solução de Identidade Descentralizada (DID) e Credenciais Verificáveis (VC) para o sistema de transações DREX. O objetivo é garantir a privacidade dos dados dos clientes, mantendo-os off-chain e utilizando uma rede local para simulação.
 
-Try running some of the following tasks:
+## Estrutura do Projeto
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
->>>>>>> 0552d4f (Initial commit)
+### Contratos Inteligentes
+
+1. **EthereumDIDRegistry.sol**
+   - Contrato para registro de DIDs na rede Ethereum.
+   
+2. **RealDigital.sol**
+   - Implementação de um token ERC20 para representar o Real Digital.
+   
+3. **RealTokenizado.sol**
+   - Implementação de um token ERC20 para representar o Real Tokenizado.
+   
+4. **RealTokenSwap.sol**
+   - Contrato para a realização de swaps entre Real Digital e Real Tokenizado.
+
+### Scripts de Interação
+
+1. **setup.mjs**
+   - Configuração do agente Veramo e conexão com o banco de dados SQLite.
+   
+2. **deploy-contracts.mjs**
+   - Script para deploy dos contratos inteligentes na rede local usando Hardhat.
+   
+3. **drex-create-dids.mjs**
+   - Script para criação de DIDs para os participantes da rede.
+   
+4. **drex-issue-credentials.mjs**
+   - Script para emissão de credenciais verificáveis (VCs) para os participantes da rede.
+   
+5. **drex-swap.mjs**
+   - Script para realizar swaps entre Real Digital e Real Tokenizado.
+
+## Dependências
+
+Este projeto utiliza as seguintes bibliotecas:
+
+- **OpenZeppelin**: Conjunto de bibliotecas para desenvolvimento de contratos inteligentes seguros e padrões.
+- **Ethers.js**: Biblioteca para interagir com a blockchain Ethereum.
+- **Veramo**: Framework para gerenciamento de identidades descentralizadas e emissão de credenciais verificáveis.
+
